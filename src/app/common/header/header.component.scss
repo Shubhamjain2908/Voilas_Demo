@@ -1,0 +1,228 @@
+@import 'icons';
+
+// Link interaction effects
+a {
+    &:hover, &:focus {
+        color: inherit;
+    }
+}
+
+// Wrapper
+.navbar {
+    background-color: #0c2d5f;
+    color: #fff;
+    padding: 0;
+
+    &__heading {
+        font-weight: bold;
+        font-size: 18px;
+        margin: 0 72px 0 0;
+    }
+
+    &__content {
+        flex: auto;
+    }
+}
+
+// Navigation wrapper
+.navbar-nav {
+    align-items: center;
+
+    // 1st level navigation 
+    &--primary {
+        height: 64px;
+        padding-left: 21px;
+        background-color: #0e3570;
+
+        // Drowpdown
+        ::ng-deep .dropdown-menu {
+            background-color: #0e3570;
+            margin: -33px -38px;
+        }
+
+        > .nav-item {
+            &:not(:first-child) {
+                margin: 0 28px;
+            }
+
+            &.active {
+                border-top: 3px solid #00a2e0;
+                padding-bottom: 3px;
+            }
+
+            > .nav-link {
+                padding: 0;
+            }
+
+            .nav-link {
+                text-transform: uppercase;
+            }
+        }
+    }
+
+    // Second level navigation
+    &--secondary {
+        height: 43px;
+
+        // Dropdown
+        ::ng-deep .dropdown-menu {
+            background-color: #0c2d5f;
+            margin: -34px -8px;
+        }
+
+        .nav-item {
+            &.active {
+                background-color: #00a2e0;
+            }
+
+            &:not(.active):not(.nav-item--dropdown) {
+                opacity: 0.5;
+            }
+        }
+
+        > .nav-item > .nav-link {
+            padding: 0 38px;
+        }
+    }
+
+    // Dropdown 
+    &__dropdown {
+        @include icon-before(ellipsis, 0);
+        vertical-align: middle;
+        padding: 10px;
+
+        &::after {
+            display: none;
+        }
+    }
+}
+
+// Common dropdown styles
+::ng-deep .dropdown-menu {
+    box-shadow: 1px 1px 7px rgba(0, 0, 0, 0.1);
+    border-radius: 4px;
+    padding: 0;
+    color: #fff;
+
+    .nav-item {
+        padding: 12px 26px 12px 13px;
+
+        &:not(:first-child) {
+            border-top: 1px solid rgba(255, 255, 255, 0.5);
+        }
+    }
+    
+
+    .nav-link {
+        width: 100%;
+        padding: 0;
+        white-space: nowrap;
+    }
+}
+
+.nav-item {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+// Logo
+.navbar-brand {
+    text-indent: -9999px;
+    white-space: nowrap;
+    width: 184px;
+    height: 64px;
+    background: url(/assets/img/logo.png) no-repeat center center #ffffff;
+    margin: 0;
+    padding: 0;
+    align-self: flex-start;
+}
+
+.nav-link {
+    font-size: 12px;
+
+    &:hover {
+        opacity: .75;
+    }
+
+    &--dashboard {
+        @include icon-before(gauge);
+    }
+
+    &--admin {
+        @include icon-before(checklist);
+    }
+
+    &--settings {
+        @include icon-before(gear);
+    }
+
+    &--globe {
+        @include icon-before(globe);        
+    }
+
+    &--chat {
+        @include icon-before(chat);        
+    }
+
+    &--recycle {
+        @include icon-before(recycle);        
+    }
+}
+
+.navbar-user {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+
+    &__alerts {
+        @include icon(bell);
+        position: relative;
+        margin-right: 26px;
+
+        &[data-count]:after {
+            content: attr(data-count);
+            font-weight: bold;
+            font-size: 10px;
+            color: #fff;
+            border: 2px solid #0e3570;
+            background-color: #ee3324;
+            width: 19px;
+            height: 19px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: absolute;
+            top: -50%;
+            right: -75%;
+            border-radius: 50%;
+        }
+    }
+
+    &__avatar {
+        width: 43px;
+        height: auto;
+        margin-right: 9px;
+    }
+
+    &__greeting {
+        font-weight: bold;
+        font-size: 10px;
+        display: flex;
+        align-items: center;
+        padding-right: 28px;
+        border-right: 1px solid rgba(255, 255, 255, 0.5);
+        
+        strong {
+            font-size: 12px;
+            line-height: 1.8em;
+            display: block;
+        }
+    }
+
+    &__logout {
+        @include icon-before(exit, 0);
+        padding: 10px;
+        margin: 0 13px 0 11px;        
+    }
+}

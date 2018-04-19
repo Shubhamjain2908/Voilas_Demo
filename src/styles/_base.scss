@@ -1,0 +1,23 @@
+*:before, *:after {
+    display: inline-block;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+button, a {
+    color: inherit;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+
+    &, &:hover, &:focus {
+        text-decoration: none;
+        outline: none;
+    }
+}

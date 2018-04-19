@@ -1,0 +1,95 @@
+<!-- Header component -->
+<nav class="navbar navbar-expand-lg">
+  <!-- Logo -->
+  <a class="navbar-brand" routerLink="/dashboard">wipro holmes</a>
+
+  <!-- Content container -->
+  <div class="navbar__content">
+    <!-- First level navigation -->
+    <ul class="navbar-nav navbar-nav--primary">
+      <li class="nav-item">
+        <!-- Heading -->
+        <a routerLink="/dashboard">
+          <h1 class="navbar__heading">Claim Management</h1>
+        </a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link nav-link--dashboard" routerLink="/dashboard">Dashboard</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link nav-link--admin" routerLink="/admin">Administration</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link nav-link--settings" routerLink="/settings">Settings</a>
+      </li>
+      <!-- Rest of 1st level items (dropdown) -->
+      <li ngbDropdown class="nav-item nav-item--dropdown" placement="bottom-left">
+        <!-- Dropdown toggle -->
+        <button ngbDropdownToggle class="navbar-nav__dropdown"></button>
+        <!-- Dropdown content -->
+        <ul ngbDropdownMenu>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link nav-link--globe" routerLink="/test/1">Other Menu 1</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link  nav-link--chat" routerLink="/test/2">Other Menu 2</a>
+            </li>
+            <li class="nav-item" routerLinkActive="active">
+                <a class="nav-link  nav-link--recycle" routerLink="/test/3">Other Menu 3</a>
+            </li>
+        </ul>
+      </li>
+      <!-- User controls -->
+      <li class="navbar-user">
+        <!-- Alerts button -->
+        <button class="navbar-user__alerts" data-count="2"></button>
+        <!-- User welcome -->
+        <a class="navbar-user__greeting" href="javascript:;">
+          <img src="/assets/img/sample-avatar.png" class="navbar-user__avatar"/>
+          <span>Welcome <strong>Bunga Jelitha</strong></span>
+        </a>
+        <!-- Logout -->
+        <button class="navbar-user__logout"></button>
+      </li>
+    </ul>
+
+    <!-- Second level navigation -->
+    <ul class="navbar-nav navbar-nav--secondary">
+      <li class="nav-item" routerLinkActive="active">
+        <a class="nav-link" routerLink="/admin/system">System Configuration</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/admin/queue">Queue Management</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/admin/user">User Management</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/admin/data">Reference Data</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/admin/project">Project Configuration</a>
+      </li>
+      <li class="nav-item" routerLinkActive="active">
+          <a class="nav-link" routerLink="/admin/training">Training</a>
+      </li>
+      <!-- Rest of 2nd level items (dropdown) -->
+      <li ngbDropdown class="nav-item nav-item--dropdown" placement="bottom-left">
+          <!-- Dropdown toggle -->
+          <button ngbDropdownToggle class="navbar-nav__dropdown"></button>
+          <!-- Dropdown content -->
+          <ul ngbDropdownMenu>
+              <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="admin/test/4">Other Sub Menu 1</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="admin/test/5">Other Sub Menu 2</a>
+              </li>
+              <li class="nav-item" routerLinkActive="active">
+                  <a class="nav-link" routerLink="admin/test/6">Other Sub Menu 3</a>
+              </li>
+          </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
