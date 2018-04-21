@@ -2,6 +2,7 @@ import { PlaceholderComponent } from './common/placeholder/placeholder.component
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { McBreadcrumbsModule } from 'ngx-breadcrumbs';
+import {FormsComponent} from './common/placeholder/forms/forms.component';
 
 const routes: Routes = [
   // Dashboard navigation tree
@@ -58,6 +59,15 @@ const routes: Routes = [
         data: {
           breadcrumbs: 'Project Configuration'
         },
+        children: [
+          {
+            path: 'forms',
+            component: FormsComponent,
+            data: {
+              breadcrumbs: 'Forms Modulation'
+            }
+          }
+        ],
       },
       {
         path: 'training',

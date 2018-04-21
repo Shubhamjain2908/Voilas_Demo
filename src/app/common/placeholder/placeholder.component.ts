@@ -1,18 +1,10 @@
-import { Component } from '@angular/core';
-import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
+import {Component} from '@angular/core';
 
 @Component({
   selector: 'app-placeholder',
   templateUrl: './placeholder.component.html',
-  styleUrls: ['./placeholder.component.scss'] 
+  styleUrls: ['./placeholder.component.scss']
 })
+export class PlaceholderComponent {
 
-export class PlaceholderComponent implements OnInit {
-  isModal = false;
-
-  ngOnInit() {}
-
-  onModal() {
-    this.isModal = true;
-  }
 }

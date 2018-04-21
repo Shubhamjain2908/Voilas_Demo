@@ -1,0 +1,52 @@
+  <div class="formAndAttributes">
+    <div class="frm">
+      <h4>Forms  (i)</h4>
+    </div>
+    <div class="searchBar">
+      <input type="text" placeholder="Search.." class="searchbox" name="search" ngModel >&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      <button type="button" id="myBtn" class="btn btn-primary" (click)="openModel()">+ Add From</button>
+    </div>
+  </div>
+
+  <span class="hrLine"></span>
+  <div class="table-responsive">
+    <table id="myTable" class="display table" width="100%">
+      <thead>
+      <tr style="background: lightblue;">
+        <th> </th>
+        <th>Form Name</th>
+        <th>File</th>
+        <th align="right">Action</th>
+        <th align="right"> </th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let f of sampleForms; let i=index;">
+        <td><input type="radio" name="a"></td>
+        <td>{{f.formName}}</td>
+        <td>{{f.file}}</td>
+        <td align='right'><span class="glyphicon trash">&#xe020;</span>&nbsp;&nbsp;<span class="glyphicon">&#xe065;</span>&nbsp;&nbsp;</td>
+        <td align='right'><input type="checkbox" id="myCheck"></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+
+    <div *ngIf="AddForm">
+      <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2" >
+        <form (ngSubmit)="onSignIn(f)" #f="ngForm">
+          <div class="form-group">
+            <label for="fileName">File Name:</label>
+            <input type="text" class="form-control" ngModel name="fileName" id="fileName">
+          </div>
+          <div class="form-group">
+            <label for="uploadFile">Upload File:</label>
+            <input type="file" class="form-control" name="uploadFile" ngModel id="uploadFile" #UploadedFile>
+          </div>
+          <button type="submit" class="btn btn-default">Submit</button>
+        </form>
+      </div>
+      </div>
+    </div>
+<app-attributes></app-attributes>

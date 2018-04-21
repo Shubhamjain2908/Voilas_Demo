@@ -1,51 +1,8 @@
-<div class="row">
-    <div class="col-md-12">
-        <div class="container"> 
-          <button class="btn btn-info" data-toggle="modal" (click)="onModal()">Add form</button> 
-          <div class="modal fade" *ngIf="isModal">
-            <div class="modal-dialog">
-              <div class="modal-content">
-              
-                <!-- Modal Header -->
-                <div class="modal-header">
-                  <h4 class="modal-title">Modal Heading</h4>
-                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                </div>
-                
-                <!-- Modal body -->
-                <div class="modal-body">
-                  Modal body..
-                </div>
-                
-                <!-- Modal footer -->
-                <div class="modal-footer">
-                  <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                </div>
-                
-              </div>
-            </div>
-          </div>
-            <table class="table">          
-              <thead>
-                <tr class="first">
-                  <th>Form Name</th>
-                  <th>File</th>
-                  <th class="right">Action</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr class="third">
-                  <td>John</td>
-                  <td>Doe</td>
-                  <td align='right'>john@example.com</td>
-                </tr>
-                <tr class="second">
-                  <td>Mary</td>
-                  <td>Moe</td>
-                  <td align='right'>mary@example.com</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-    </div>
+<div class="container container-fluid">
+<ul class="nav nav-tabs">
+  <li class="active"><a routerLinkActive="active" routerLink="/forms"><b>FORMS AND ATTRIBUTES</b></a></li>
+  <li><a style="background: lightgrey;" routerLinkActive="active"><b>PROJECTS</b></a></li>
+  <li><a style="background: lightgrey;" routerLinkActive="active"><b>RULES</b></a></li>
+</ul>
+<app-forms></app-forms>
 </div>
