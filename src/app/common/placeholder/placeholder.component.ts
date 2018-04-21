@@ -1,7 +1,18 @@
 import { Component } from '@angular/core';
+import { OnInit } from '@angular/core/src/metadata/lifecycle_hooks';
 
 @Component({
   selector: 'app-placeholder',
-  template: '<p>This area automatically fills remaining page height.</p>'
+  templateUrl: './placeholder.component.html',
+  styleUrls: ['./placeholder.component.scss'] 
 })
-export class PlaceholderComponent {}
+
+export class PlaceholderComponent implements OnInit {
+  isModal = false;
+
+  ngOnInit() {}
+
+  onModal() {
+    this.isModal = true;
+  }
+}
